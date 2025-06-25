@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <title>JS 1일차 | 과제</title>
+  </head>
+  <body>
+    <main>
+      <section class="container">
+        <div>
+          <label for="baseFontSize">기본 폰트(px)</label>
+          <input
+            id="baseFontSize"
+            type="number"
+            placeholder="기본 폰트(px)"
+            value="16"
+          />
+        </div>
+        <div>
+          <label for="needFontSize">원하는 px값</label>
+          <input
+            id="needFontSize"
+            type="number"
+            placeholder="원하는 px값"
+            required
+          />
+        </div>
+        <button onclick="pxToEm()">EM계산하기</button>
+        <div class="box-result"></div>
+      </section>
+    </main>
+    <script src="./src/js/script.js"></script>
+  </body>
+</html>

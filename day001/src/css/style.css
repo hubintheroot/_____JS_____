@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+input {
+  width: 100%;
+}
+
+.container {
+  max-width: 40vw;
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+
+  & div {
+    width: 100%;
+  }
+}
+
+.box-result {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.box-result::after {
+  content: 'em';
+  display: block;
+  margin-left: 0.5em;
+}
