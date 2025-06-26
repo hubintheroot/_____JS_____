@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>guess number | Task</title>
+  </head>
+  <body>
+    <div>
+      <h1>guess a number(1~10)</h1>
+      <div>
+        <input type="number" name="" id="number" />
+        <button type="button" id="btn">확인</button>
+      </div>
+      <p id="result"></p>
+    </div>
+    <script>
+      const answer = Math.floor(Math.random() * 10 + 1);
+      const input = document.getElementById('number');
+      const btn = document.getElementById('btn');
+      const result = document.getElementById('result');
+
+      btn.addEventListener('click', (e) => {
+        console.log(answer);
+        const data = Number(input.value);
+        result.innerText = `${data} ${
+          answer === data
+            ? `정답입니다! ${answer}`
+            : `${answer < data ? '너무 커요' : '너무 작아요'}`
+        }`;
+        console.log(data);
+      });
+    </script>
+  </body>
+</html>

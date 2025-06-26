@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>body change color | Task</title>
+    <style>
+      body {
+        background-color: lightgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <label for="bgc">문서의 배경색 바꾸기</label>
+      <select name="bgc" id="bgc">
+        <option value="lightgreen">lightgreen</option>
+        <option value="lightskyblue">lightskyblue</option>
+        <option value="lightblue">lightblue</option>
+        <option value="lightcoral">lightcoral</option>
+        <option value="lightgoldenrodyellow">lightgoldenrodyellow</option>
+      </select>
+    </div>
+    <script>
+      const select = document.getElementById('bgc');
+      const body = document.getElementsByTagName('body')[0];
+
+      select.addEventListener('input', (e) => {
+        body.style.backgroundColor = e.currentTarget.value;
+      });
+    </script>
+  </body>
+</html>
