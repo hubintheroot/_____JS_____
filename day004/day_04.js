@@ -40,7 +40,12 @@
 
   const animals = ['puppy', 'cat', 'fox'];
   // Quiz 8. puppy와 cat 사이에 'parret'과 'rabbit'을 추가하세요
-  animals.splice(animals.indexOf('cat'), 0, 'parret', 'rabbit');
+  animals.splice(
+    animals.indexOf('cat'),
+    animals.indexOf('puppy'),
+    'parret',
+    'rabbit'
+  );
   console.log(animals);
 
   // Quiz 9. animals 변수의 값을 거꾸로 출력하세요 ['fox','cat','rabbit','parret','puppy']
