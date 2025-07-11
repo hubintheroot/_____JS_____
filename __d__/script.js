@@ -63,7 +63,7 @@ memoForm.addEventListener('submit', (e) => {
   // 입력값 가져오기 (trim() 사용)
   const nextData = {
     title: titleInput.value.trim(),
-    content: contentInput.value,
+    content: contentInput.value.trim(),
   };
   // 제목이 비어있으면 경고 메시지 => form의 required 속성으로 문제가 발생함
   if (!nextData.title.length) alert('제목을 입력해주세요');
