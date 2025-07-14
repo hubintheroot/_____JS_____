@@ -1,5 +1,4 @@
 // TODO2-1: 기본 계산 함수들을 import 하세요
-import { squareRoot } from './calculator/advance.js';
 import { add, subtract, multiply, divide } from './calculator/basic.js';
 
 const num1Input = document.getElementById('num1');
@@ -48,6 +47,7 @@ async function calculator(operation) {
         result = multiply(num1, num2);
         break;
       case '/':
+        if (num2 === 0) throw new Error('0으로 나눌 수 없습니다.');
         result = divide(num1, num2);
         break;
       case '^':
@@ -91,10 +91,12 @@ upgradeBtn.addEventListener('click', async () => {
       });
 
       // UI를 변경하여 고급 계산기를 표시하고, 고급 기능이 활성화 메시지를 화면에 출력하세요
-      advancedCalculator.style.display = 'block';
+      advancedCalculator.style.display = 'grid';
       alert('고급 계산기 활성화');
     } catch (error) {
       // 에러 메시지를 콘솔 및 화면에 출력하세요
+      // calculator 함수에서 계산오류 처리..했는데..?
+      console.log('아마도 고급계산기에 문제가 발생한 모양입니다..?');
     }
   } else {
     // 권한이 없는 경우 "고급 계산기 사용 권한이 없습니다." 메시지를 화면에 출력해주세요.
