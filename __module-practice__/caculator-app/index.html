@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #advance-calculator {
+        display: none;
+      }
+    </style>
+    <link rel="stylesheet" href=".style.css" />
+  </head>
+  <body>
+    <h1>계산기 애플리케이션</h1>
+    <div class="input-cont">
+      <label for="num1">첫 번째 숫자</label>
+      <input type="number" name="num1" id="num1" />
+
+      <label for="num2">두 번째 숫자</label>
+      <input type="number" name="num2" id="num2" />
+    </div>
+
+    <div class="result-cont">
+      계산 결과
+      <p id="result">아직 계산이 되지 않았습니다.</p>
+    </div>
+
+    <div class="calculator" id="basic-calculator">
+      <button id="add">더하기</button>
+      <button id="subtract">빼기</button>
+      <button id="multiply">곱하기</button>
+      <button id="divide">나누기</button>
+    </div>
+
+    <button id="upgrade-btn">고급 계산기 활성화</button>
+
+    <div class="calculator" id="advance-calculator">
+      <button id="power">제곱</button>
+      <button id="squareRoot">제곱근</button>
+    </div>
+
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>
