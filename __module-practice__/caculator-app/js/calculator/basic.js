@@ -21,6 +21,7 @@ function multiply(a, b) {
 // 나누기 함수
 function divide(a, b) {
   // TODO1-4: 나누기 함수를 작성하세요
+  if (b === 0) throw new Error('0으로 나눌 수 없습니다.');
   return a / b;
 }
 
