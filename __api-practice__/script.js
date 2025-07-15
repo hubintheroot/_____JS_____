@@ -37,18 +37,18 @@ async function searchBooks() {
       }
     );
     // 응답 상태 확인하기
-    console.log(res.ok);
     if (!res.ok) throw new Error(res.status);
 
     // JSON 데이터로 변환하기
     const data = await res.json();
     // 결과가 없다면 '검색 결과가 없습니다.' 메시지 표시
-    if (!data.documents.length) errorRender('검색 결과가 없습니다.');
+    if (!data.documents.length) throw new Error('검색 결과가 없습니다.');
+
     // 검색 결과를 화면에 표시하기
     renderBooks(data.documents);
   } catch (error) {
     // 에러 메시지 콘솔 및 화면에 표시하기
-    errorRender(error);
+    errorRender(error.message);
     console.error(error);
   }
 }
@@ -77,7 +77,6 @@ function renderBooks(books) {
     const img = document.createElement('img');
     img.setAttribute('src', book.thumbnail);
     img.setAttribute('alt', `도서 '${book.title}'의 표지`);
-    img.style.width = '128px';
 
     const authors = document.createElement('p');
     authors.textContent = book.authors.join(', ');
