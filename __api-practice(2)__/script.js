@@ -94,6 +94,8 @@ $searchForm.addEventListener('submit', (e) => {
 function renderBooks(books) {
   $bookList.innerHTML = '';
 
+  const frag = document.createDocumentFragment();
+
   books.forEach((book) => {
     const bookItem = document.createElement('li');
     bookItem.innerHTML = `
@@ -101,8 +103,9 @@ function renderBooks(books) {
       <img src="${book.thumbnail}" alt=""/>
       <p>저자: ${book.authors.join(', ')}</p>
     `;
-    $bookList.appendChild(bookItem);
+    frag.appendChild(bookItem);
   });
+  $bookList.appendChild(frag);
 }
 
 // TODO 3: 페이지네이션 렌더링 함수 구현
