@@ -138,6 +138,7 @@ function renderPagination() {
       // 현재 페이지면 active 클래스 추가
       pageBtn.classList.add('active');
       pageBtn.disabled = true;
+      pageBtn.style.cursor = 'unset';
     }
     pageBtn.addEventListener('click', () => searchBooks(i));
     frag.appendChild(pageBtn);
