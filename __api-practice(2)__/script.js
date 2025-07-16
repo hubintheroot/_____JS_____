@@ -71,7 +71,7 @@ async function searchBooks(page = 1) {
     // 2-8. 페이지네이션 정보 업데이트
     const info = data.meta;
     // totalPages(data.meta.pageable_count 활용)
-    totalPages = Math.min(50, Math.ceil(info.pageable_count / 10));
+    totalPages = info.pageable_count;
     // currentPage 업데이트
     currentPage = page;
     // 페이지네이션 렌더링 함수 호출
@@ -114,8 +114,16 @@ function renderPagination() {
   if (!totalPages || totalPages <= 1) return;
   // 3-3. 이전 버튼 생성 (현재 페이지가 1보다 클 때만)
   if (totalPages > 1) {
+    const firstPageBtn = document.createElement('button');
+    firstPageBtn.textContent = '첫 페이지';
+    firstPageBtn.addEventListener('click', () => searchBooks(1));
+    if (currentPage === 1) {
+      firstPageBtn.disabled = true;
+    }
+    frag.appendChild(firstPageBtn);
+
     const prevBtn = document.createElement('button');
-    prevBtn.textContent = '이전';
+    prevBtn.textContent = '이전 페이지';
     prevBtn.addEventListener('click', () => {
       searchBooks(currentPage - 1);
     });
@@ -148,9 +156,14 @@ function renderPagination() {
 
   if (currentPage < totalPages) {
     const nextBtn = document.createElement('button');
-    nextBtn.textContent = '다음';
+    nextBtn.textContent = '다음 페이지';
     nextBtn.addEventListener('click', () => searchBooks(currentPage + 1));
     frag.appendChild(nextBtn);
+
+    const lastPageBtn = document.createElement('button');
+    lastPageBtn.textContent = '마지막 페이지';
+    lastPageBtn.addEventListener('click', () => searchBooks(totalPages));
+    frag.appendChild(lastPageBtn);
   }
 
   $pagination.appendChild(frag);
