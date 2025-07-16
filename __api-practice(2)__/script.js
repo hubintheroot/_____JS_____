@@ -34,13 +34,13 @@ async function searchBooks(page = 1) {
 
   // 2-3. 첫 번째 페이지일 때만 currentQuery 업데이트
   if (page === 1) {
-    currentPage = query;
+    currentQuery = encodeURIComponent(query);
   }
 
   try {
     // 2-4. fetch 요청 URL에 page 파라미터 추가
     const response = await fetch(
-      `${BOOK_URL}?query=${encodeURIComponent(query)}&size=10&page=${page}`,
+      `${BOOK_URL}?query=${currentQuery}&size=10&page=${page}`,
       {
         headers: {
           Authorization: `KakaoAK ${REST_API_KEY}`,
