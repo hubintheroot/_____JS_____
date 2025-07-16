@@ -33,6 +33,9 @@ async function searchBooks(page = 1) {
   }
 
   // 2-3. 첫 번째 페이지일 때만 currentQuery 업데이트
+  if (page === 1) {
+    currentPage = query;
+  }
 
   try {
     // 2-4. fetch 요청 URL에 page 파라미터 추가
