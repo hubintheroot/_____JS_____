@@ -71,7 +71,7 @@ async function searchBooks(page = 1) {
     // 2-8. 페이지네이션 정보 업데이트
     const info = data.meta;
     // totalPages(data.meta.pageable_count 활용)
-    totalPages = info.pageable_count;
+    totalPages = Math.ceil(info.pageable_count / 10);
     // currentPage 업데이트
     currentPage = page;
     // 페이지네이션 렌더링 함수 호출
