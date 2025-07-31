@@ -1,0 +1,148 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background-color: #f9f9f9;
+  color: #1a1a1a;
+}
+
+#search-container {
+  padding: 15px 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+#search-input {
+  flex-grow: 1;
+  max-width: 500px;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 1em;
+}
+
+#search-button {
+  padding: 10px 20px;
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+#search-button:hover {
+  background-color: #cc0000;
+}
+
+#vclip-list {
+  list-style: none;
+  padding: 20px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  /* YouTube 레이아웃과 유사하게 */
+}
+
+.vclip-item {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.vclip-thumbnail-link {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  /* 16:9 비율 유지 */
+  overflow: hidden;
+}
+
+.vclip-thumbnail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.vclip-playtime {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.vclip-info {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.vclip-title {
+  font-size: 1.1em;
+  margin-top: 0;
+  margin-bottom: 5px;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /* 2줄까지만 표시 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.vclip-title a {
+  text-decoration: none;
+  color: #1a1a1a;
+}
+
+.vclip-title a:hover {
+  color: #030303;
+}
+
+.vclip-author,
+.vclip-datetime {
+  font-size: 0.9em;
+  color: #606060;
+  margin: 2px 0;
+}
+
+#loading {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2em;
+  color: #888;
+  display: none;
+  /* 초기에는 숨김 */
+  &.active {
+    display: block;
+  }
+}
+
+#observer-target {
+  height: 10px;
+  /* 보이지 않는 타겟 요소 */
+  background-color: transparent;
+}

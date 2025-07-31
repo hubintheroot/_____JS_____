@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>YouTube 메인화면</title>
+  </head>
+  <body>
+    <div id="search-container">
+      <form id="search-form">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="동영상을 검색하세요 (예: 코딩 브이로그)"
+        />
+        <button type="submit" id="search-button">검색</button>
+      </form>
+    </div>
+
+    <ul id="vclip-list"></ul>
+
+    <div id="loading">로딩 중...</div>
+
+    <div id="observer-target"></div>
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
